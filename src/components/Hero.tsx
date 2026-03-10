@@ -8,13 +8,13 @@ const Hero = () => {
             distance={140}
             direction="horizontal"
             reverse={true}
-            duration={1}
+            duration={1.5}
             ease="power3.out"
             initialOpacity={0}
             animateOpacity
             scale={1}
             threshold={0.1}
-            delay={.4}
+            delay={.7}
             >
             <div className="hero-text">
                 <h1>Summer <i style={{ color: 'rgb(152, 109, 62)' }}>Aisne</i> 2024</h1>

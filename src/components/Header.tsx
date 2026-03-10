@@ -12,13 +12,13 @@ const Header = () => {
                     distance={140}
                     direction="horizontal"
                     reverse={false}
-                    duration={1}
+                    duration={1.5}
                     ease="power3.out"
                     initialOpacity={0}
                     animateOpacity
                     scale={1}
                     threshold={0.1}
-                    delay={.4}
+                    delay={.7}
                     >
                         <div className="brandName">
                             <h1><i>Artisan Cafe</i></h1>
