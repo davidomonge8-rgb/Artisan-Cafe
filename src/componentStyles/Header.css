@@ -1,4 +1,11 @@
 .Header{
-    border: solid black 1px;
     
+}
+
+.brandName{
+    color: rgba(0,0,0,.9);
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    text-align: left;
+    text-decoration: underline;
 }
