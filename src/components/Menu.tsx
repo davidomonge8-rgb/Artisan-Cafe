@@ -9,34 +9,28 @@ const Menu = () =>{
             <div className="menu-items">
 
                 <div className="matcha">
-                    <h1 className= "menu-image"></h1>
+                    <img src={matcha} alt="matcha" />
                     <div className="description">
-                        <h2>Matcha</h2>
+                        <h2>Matcha:</h2>
                         <p>$1.6</p>
                     </div>
                 </div>
 
                 <div className="matcha">
-                    <h1 className= "menu-image"></h1>
+                    <img src={pizza} alt="matcha" />
                     <div className="description">
-                        <h2>Matcha</h2>
-                        <p>$1.6</p>
+                        <h2>Pizza:</h2>
+                        <p>$4</p>
                     </div>
                 </div>
 
                 <div className="matcha">
-                    <h1 className= "menu-image"></h1>
+                    <img src={eggOnToast} alt="matcha" />
                     <div className="description">
-                        <h2>Matcha</h2>
-                        <p>$1.6</p>
+                        <h2>Egg On Toast:</h2>
+                        <p>$3</p>
                     </div>
                 </div>
-
-                
-
-                
-
-
                 
             </div>
         </div>
