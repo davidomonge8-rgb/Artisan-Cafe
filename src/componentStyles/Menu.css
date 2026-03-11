@@ -1,0 +1,28 @@
+.Menu{
+    margin-top: 20px;
+
+}
+
+.Menu-nav ul{
+    list-style: none;
+    display: flex; 
+    margin: auto;
+    padding-left: 0;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    width: 80%;
+    margin-left: 0;
+
+}
+
+.Menu-nav li{
+    margin: auto;
+    margin-left: 0;
+}
+
+.Menu-nav li:hover{
+    color: rgb(152, 109, 62);
+    text-decoration: underline;
+    transition: .3s;
+    cursor: pointer;
+}
