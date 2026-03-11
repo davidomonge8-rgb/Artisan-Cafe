@@ -1,0 +1,33 @@
+.menu{
+    
+}
+
+.menu-items{
+    display: flex;
+    
+    margin: auto;
+}
+
+.menu-image{
+    
+    height: 60vh;
+    border-radius: 30px;
+    background-image: url('../assets/pizza.jpg');
+    background-size: cover;
+}
+
+.matcha{
+    margin: auto;
+    width: 30%;
+}
+
+.description{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.description p{
+    font-size: 1.5rem;
+    margin-left: 30px;
+}
