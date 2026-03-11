@@ -1,0 +1,30 @@
+.Menu{
+    margin-top: 20px;
+}
+
+.Menu-nav ul{
+    list-style: none;
+    display: flex; 
+    margin: auto;
+    padding-left: 0;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    width: 80%;
+    margin-left: 0;
+
+}
+
+.Menu-nav li{
+    margin: auto;
+    margin-left: 0;
+    border-bottom: solid black 2px;
+    z-index: 3;
+    
+}
+
+.Menu-nav li:hover{
+    border-bottom: solid rgb(152, 109, 62) 2px;
+    color: rgb(152, 109, 62);
+    transition: .3s;
+    cursor: pointer;
+}

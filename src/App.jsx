@@ -3,6 +3,7 @@ import AnimatedContent from './ReactBits/AnimatedContent.jsx'
 
 import Header from './components/Header.tsx'
 import Hero from './components/Hero.tsx'
+import MenuNav from './components/MenuNav.tsx'
 import Menu from './components/Menu.tsx'
 
 
@@ -26,6 +27,9 @@ const App = () =>{
       >
         <Hero/>
         <br />
+        <MenuNav/>
+
+        <br /><br />
         <Menu/>
 
       </AnimatedContent>

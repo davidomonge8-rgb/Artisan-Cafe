@@ -1,13 +1,10 @@
 .hero{
-    border: solid black 1px;
     display: flex;
+    height: 20vh;
 }
 
 .hero-text{
     max-width: 70%;
-
-    border: solid black 1px;
-
 }
 
 .hero-text h1{
@@ -23,16 +20,34 @@
 }
 
 .New-entry{
-    border: solid black 1px;
     width: 30%;
 }
 
 .New-entry button{
     display: flex;
+    font-weight: bold;
     align-items: center;
     cursor: pointer;
-    padding: 20px;
+    padding: 10px 20px 10px 20px;
     border-radius: 20px;
     background-color: transparent;
-    border: solid rgba(0, 0, 0, 1) 1px;
+    border: solid rgba(0, 0, 0, .5) 1px;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 13vh;
+
+}
+
+.New-entry button:hover{
+    background-color: rgba(0, 0, 0, .6);
+    color: white;
+    transform: scale(1.07);
+    transition: .3s;
+    
+}
+
+.New-entry img{
+    max-width: 25px;
+    margin: 0 5px 0 0;
 }
