@@ -1,40 +1,70 @@
 import '../componentStyles/Menu.css'
-import matcha from '../assets/matcha.jpg'
-import pizza from '../assets/pizza.jpg'
-import eggOnToast from '../assets/eggOnToast.jpg'
+import { useEffect, useState } from 'react'
+import { createClient } from '@supabase/supabase-js'
 
-const Menu = () =>{
-    return(
-        <div className='menu'>
-            <div className="menu-items">
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+)
 
-                <div className="matcha">
-                    <img src={matcha} alt="matcha" />
-                    <div className="description">
-                        <h2>Matcha:</h2>
-                        <p>$1.6</p>
-                    </div>
-                </div>
+interface MenuItem {
+  id: number
+  name: string
+  description: string
+  price: number
+  image_url: string
+}
 
-                <div className="matcha">
-                    <img src={pizza} alt="matcha" />
-                    <div className="description">
-                        <h2>Pizza:</h2>
-                        <p>$4</p>
-                    </div>
-                </div>
+const Menu = () => {
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([])
+  const [loading, setLoading] = useState(true)
 
-                <div className="matcha">
-                    <img src={eggOnToast} alt="matcha" />
-                    <div className="description">
-                        <h2>Egg On Toast:</h2>
-                        <p>$3</p>
-                    </div>
-                </div>
-                
+  useEffect(() => {
+    const fetchMenuItems = async () => {
+      const { data, error } = await supabase
+        .from('menu_items')
+        .select('*')
+
+      if (error) {
+        console.error('Error fetching menu items:', error)
+        setLoading(false)
+        return
+      }
+
+      const itemsWithImages = (data || []).map((item) => ({
+        ...item,
+        image_url: supabase.storage
+          .from('images')
+          .getPublicUrl(item.image_url).data.publicUrl
+      }))
+
+      setMenuItems(itemsWithImages)
+      setLoading(false)
+    }
+
+    fetchMenuItems()
+  }, [])
+
+  if (loading) return <p>Loading menu...</p>
+
+  return (
+    <div className='menu'>
+      <div className="menu-items">
+        {menuItems.map((item) => (
+          <div key={item.id} className="item">
+            <img src={item.image_url} alt={item.name} />
+
+            <div className="description">
+              <h2>{item.name}:</h2>
+              <p>${item.price.toFixed(2)}</p>
             </div>
-        </div>
-    )
+
+              <h3>{item.description}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default Menu
